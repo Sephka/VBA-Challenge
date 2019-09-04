@@ -1,9 +1,9 @@
-Attribute VB_Name = "Module11"
+Attribute VB_Name = "Module1"
 Sub stockmarket():
 
 
 'Loop through each worksheet
-For Each ws In worksheets
+For Each ws In Worksheets
 
     'creating and setting variables
     Dim totalStockVolume As Double
@@ -76,10 +76,10 @@ For Each ws In worksheets
                 End If
                 
                 ' yearly change
-                ws.Cells(inforow, 10).Value = (ws.Cells(rownum, 3).Value - opening)
+                ws.Cells(inforow, 10).Value = (ws.Cells(rownum, 6).Value - opening)
                 
                 ' Percent Change
-                ws.Cells(inforow, 11).Value = (ws.Cells(rownum, 3).Value - opening) / opening
+                ws.Cells(inforow, 11).Value = (ws.Cells(rownum, 6).Value - opening) / opening
                 ws.Cells(inforow, 11).Value = ws.Cells(inforow, 11).Value * 1
                 ws.Cells(inforow, 11).NumberFormat = "0.00%"
     
@@ -127,4 +127,3 @@ Next ws
 
 
 End Sub
-
